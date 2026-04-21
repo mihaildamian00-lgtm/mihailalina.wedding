@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mihail & Alina | Nuntă</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://db.onlinewebfonts.com/c/76362bf99a80f18707d7e04c71ab2eb4?family=Modelista+Signature" rel="stylesheet">
+  <style>
+    :root{--sage:#c0bfac;--periwinkle:#a6a9b8;--cream:#faf8f3;--reseda:#969d8a;--blush:#edccb4;--ink:#2d2a26;--muted:#6f6a61;--line:rgba(45,42,38,.12)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream);color:var(--ink);font-family:"Cormorant Garamond",serif;overflow-x:hidden}
+    a{color:inherit} button,input,select,textarea{font:inherit}
+    .langbar{position:fixed;top:22px;right:22px;z-index:1000;display:flex;gap:8px;background:rgba(250,248,243,.65);backdrop-filter:blur(10px);padding:8px;border:1px solid var(--line);border-radius:999px}
+    .langbar button{border:0;background:transparent;color:var(--muted);padding:8px 12px;border-radius:999px;cursor:pointer;transition:.25s}.langbar button.active{background:var(--reseda);color:#fff}
+    .brand-mini{position:fixed;top:22px;left:22px;z-index:999;opacity:0;transform:translateY(-6px);transition:.6s ease;font-family:"Modelista Signature",cursive;font-size:28px;letter-spacing:.02em;color:var(--ink)}
+    .brand-mini.show{opacity:1;transform:translateY(0)}
+    .hero{min-height:100vh;display:grid;place-items:center;padding:60px 20px;position:relative;isolation:isolate}
+    .hero::before{content:"";position:absolute;inset:0;background:url('https://static.tildacdn.one/tild3265-6231-4562-b439-613866373830/429980660_1833932580.jpg') center/cover no-repeat fixed;z-index:-1;filter:blur(8px)}
+    .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;display:none}
+    .hero-inner{text-align:center;max-width:980px;padding-top:12vh}
+    .name{font-family:"Modelista Signature",regular;font-size:clamp(64px,10vw,122px);line-height:.85;font-weight:400;letter-spacing:.02em;margin:0;color:var(--ink);text-shadow:0 1px 20px rgba(250,248,243,.35);padding:50px 80px;border-radius:20px;display:inline-block;position:relative}
+    .name::before{content:"";position:absolute;inset:0;background:transparent;border-radius:20px;z-index:-1}
+    .sub{margin:22px auto 0;max-width:760px;font-size:clamp(20px,2.2vw,28px);line-height:1.4;color:var(--ink)}
+    .scrollhint{margin-top:40px;font-size:14px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+    section{padding:120px 20px;position:relative}
+    .wrap{max-width:1080px;margin:0 auto}.card{border:1px solid var(--line);background:rgba(250,248,243,.72);backdrop-filter:blur(8px);border-radius:28px;padding:34px 28px}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}.grid2{display:grid;grid-template-columns:1fr;gap:24px}
+    h2{font-size:clamp(34px,4vw,56px);font-weight:500;margin:0 0 14px}.eyebrow{letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-size:12px;margin-bottom:14px}
+    p{font-size:22px;line-height:1.55;margin:0;color:var(--ink)} .muted{color:var(--muted)}
+    .details{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.detail{padding:18px;border-radius:20px;background:#fff;border:1px solid var(--line)}
+    .detail .k{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)} .detail .v{font-size:24px;margin-top:8px}
+    .photo{width:100%;height:100%;min-height:520px;object-fit:cover;border-radius:28px;border:1px solid var(--line)}
+    .sep{height:180px} .accent{background:linear-gradient(135deg, rgba(192,191,172,.24), rgba(237,204,180,.26), rgba(166,169,184,.22));border:1px solid var(--line)}
+    .links a{display:inline-flex;align-items:center;gap:10px;margin-right:14px;margin-top:12px;padding:12px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none;background:#fff}
+    form{display:grid;gap:14px} input,textarea,select{width:100%;padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:#fff;color:var(--ink)} textarea{min-height:120px;resize:vertical} .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;border:0;padding:14px 18px;border-radius:999px;background:var(--reseda);color:#fff;cursor:pointer;text-decoration:none;font-size:18px}
+    .note{font-size:18px;color:var(--muted)}
+    .fade{opacity:.94;transform:translateY(0);transition:opacity .8s ease, transform .8s ease} .fade.in{opacity:1;transform:translateY(0)}
+    .section-block{opacity:.02;transform:translateY(70px);transition:opacity .9s ease, transform .9s ease} .section-block.visible{opacity:1;transform:translateY(0)}
+    .footer{padding:60px 20px 100px;text-align:center;color:var(--muted);font-size:18px}
+    .lang{display:none}.lang.active{display:block}
+    @media (max-width:900px){.grid,.grid2,.details,.row{grid-template-columns:1fr}.hero-inner{padding-top:8vh}.brand-mini{font-size:24px}.photo{min-height:380px}}
+  </style>
+</head>
+<body>
+  <div class="brand-mini" id="miniBrand">Mihail & Alina</div>
+  <div class="langbar" aria-label="Language switcher">
+    <button class="active" data-lang="ro">RO</button><button data-lang="ua">UA</button><button data-lang="en">EN</button>
+  </div>
+
+  <section class="hero">
+    <img class="bg" src="672156361_4669406476619826_2910457187078851582_n.jpg" alt="Mihail și Alina">
+    <div class="hero-inner fade">
+      <h1 class="name">Mihail<br>&amp;Alina</h1>
+      <div class="sub lang active" data-i18n="heroText" data-lang="ro">Cu bucurie în suflet, vă invităm să fiți alături de noi în ziua în care ne unim destinele.</div>
+      <div class="sub lang" data-i18n="heroText" data-lang="ua">З радістю в серці запрошуємо вас бути поруч у день, коли ми поєднаємо свої долі.</div>
+      <div class="sub lang" data-i18n="heroText" data-lang="en">With joy in our hearts, we invite you to be with us on the day we unite our lives.</div>
+      <div class="scrollhint">Scroll</div>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="wrap grid">
+      <div class="card">
+        <div class="eyebrow">Invitation</div>
+        <div class="lang active" data-lang="ro"><h2>Vă așteptăm cu drag</h2><p>Prezența voastră va transforma această zi într-o amintire pe care o vom purta mereu cu noi. Ne dorim să sărbătorim împreună începutul unei noi etape, plină de emoție, zâmbete și clipe frumoase.</p>
+        <div class="details">
+          <div class="detail"><div class="k">Data</div><div class="v">12 Iunie 2027</div></div>
+          <div class="detail"><div class="k">Ora</div><div class="v">17:00</div></div>
+          <div class="detail"><div class="k">Locația</div><div class="v">Costești</div></div>
+        </div>
+        </div>
+        <div class="lang" data-lang="ua"><h2>Запрошуємо з любов’ю</h2><p>Ваша присутність зробить цей день спогадом, який ми завжди збережемо в серці. Ми хочемо розділити з вами початок нового етапу, сповненого емоцій, усмішок і красивих моментів.</p>
+        <div class="details">
+          <div class="detail"><div class="k">Дата</div><div class="v">12 червня 2027</div></div>
+          <div class="detail"><div class="k">Час</div><div class="v">17:00</div></div>
+          <div class="detail"><div class="k">Місце</div><div class="v">Costești</div></div>
+        </div>
+        </div>
+        <div class="lang" data-lang="en"><h2>We invite you</h2><p>Your presence will turn this day into a memory we will carry with us forever. We would love to celebrate the beginning of this new chapter with warmth, smiles, and beautiful moments.</p>
+        <div class="details">
+          <div class="detail"><div class="k">Date</div><div class="v">12 June 2027</div></div>
+          <div class="detail"><div class="k">Time</div><div class="v">17:00</div></div>
+          <div class="detail"><div class="k">Location</div><div class="v">Costești</div></div>
+        </div>
+        </div>
+      </div>   
+      <div class="card accent"> <img src="https://previews.dropbox.com/p/thumb/AC-6NpmoC9PrQjtRQTTJhfQ6lS85jmVipJ0Xd_UPHM6NteypaNth-6W-ktOxTrQewLMpAjnxM2ZEHdz39OZPFFgb_yQ98LTkzRyL02pw7A0MHI5PESL8ytQkjQEe-iZ_DAR2ZgeO1P_th5ljI71x05pyA9N2M5uMjlzTfFvjYJhnyeLIYWPD26grbyPRQ4C3wmPuWMwX1jvji453k84k9sgEA-lgJmZ-h-o8hS_fICBfjk75AC5lkhUa1DlPs2WwhLl7GTnBhCjK-gKJA_xTxwgxjGYjHNSdTkDW-2Jr9c_M1kCJbHeDrbptpQCH-9D-OrW7fU8wCPFlA8E-8DlgBn6d/p.jpeg?is_prewarmed=true" alt="Wedding photo" style="width: 420px; height: auto;">
+    </div>
+  </section>
+  <section class="section-block">
+    <div class="wrap grid">
+      <div class="card accent">
+        <div class="eyebrow">Details</div>
+        <div class="lang active" data-lang="ro"><h2>Evenimentul</h2><p>Cu binecuvântarea părinților și a nașilor, pornim cu emoție spre această zi specială. Nunta va avea loc la Complexul turistic Costești, în Sala Panoramică, restul detaliilor vor fi comunicate personal.</p></div>
+        <div class="lang" data-lang="ua"><h2>Подія</h2><p>З благословенням батьків і хрещених ми зворушено прямуємо до цього особливого дня. Весілля відбудеться в туристичному комплексі Costești, у залі sala Panoramică, а інші деталі ми повідомимо особисто.</p></div>
+        <div class="lang" data-lang="en"><h2>The day</h2><p>With the blessing of our parents and godparents, we are stepping with emotion into this special day. The wedding will take place at Complexul turistic Costești, in the panoramic hall, the remaining details will be shared personally.</p></div>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Location</div>
+        <div class="lang active" data-lang="ro"><h2>Acces la locație</h2><p>Complexul turistic Costești oferă cadrul ideal pentru o celebrare elegantă și caldă.</p></div>
+        <div class="lang" data-lang="ua"><h2>Доступ до локації</h2><p>Туристичний комплекс Costești пропонує ідеальні умови для елегантного та теплого святкування.</p></div>
+        <div class="lang" data-lang="en"><h2>Venue Access</h2><p>The Costești Tourist Complex offers the ideal setting for an elegant and warm celebration.</p></div>
+        <div class="links">
+        <a href="https://complexcostesti.md/" target="_blank" rel="noreferrer">Site Location</a>
+        <a href="https://maps.app.goo.gl/zAQ7hUEMgeoxqTk57" target="_blank" rel="noreferrer">Open Map</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="wrap grid2">
+      <div class="card">
+        <div class="eyebrow">Special note</div>
+        <div class="lang active" data-lang="ro"><h2>Mici mențiuni</h2><p>Vă rugăm să primiți această invitație ca pe o mare bucurie împărtășită. În locul cadourilor cu termen de valabilitate, ne-ar face o reală plăcere un dar ales cu suflet: o carte iubită, o sticlă de băutură bună sau orice obiect pe care v-ați dori să ni-l oferiți din inimă. Cel mai important însă rămâne prezența voastră.</p></div>
+        <div class="lang" data-lang="ua"><h2>Додатково</h2><p>Просимо прийняти це запрошення як велику спільну радість. Замість подарунків із терміном придатності нам було б щиро приємно отримати дарунок від серця: улюблену книгу, пляшку доброго напою або будь-яку річ, якою ви хотіли б нас порадувати. Проте найціннішим подарунком для нас буде ваша присутність.</p></div>
+        <div class="lang" data-lang="en"><h2>Special notes</h2><p>Please receive this invitation as a shared joy. Instead of gifts with an expiration date, we would be delighted by something chosen from the heart: a beloved book, a fine bottle of wine or any alcoholic beverage. But still the most important thing remains your presence.</p></div>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Confirmation</div>
+        <div class="lang active" data-lang="ro"><h2>RSVP</h2></div>
+        <div class="lang" data-lang="ua"><h2>Підтвердження</h2></div>
+        <div class="lang" data-lang="en"><h2>RSVP</h2></div>
+        <form action="https://formsubmit.co/mihail.damian00@gmail.com" method="POST">
+    <input type="hidden" name="_next" value="https://siteultau.md/multumim.html">
+    <input type="hidden" name="_captcha" value="false">
+          <div class="row"><input name="name" placeholder="Nume / Name / Ім'я" required><input name="guests" placeholder="Nr. persoane / Guests / Кількість осіб" required></div>
+          <div class="row"><select name="attendance" required><option value="">Confirmare / Attendance / Підтвердження</option><option>Da / Yes / Так</option><option>Nu / No / Ні</option></select><input name="phone" placeholder="Telefon / WhatsApp / Телефон" required></div>
+          <textarea name="message" placeholder="Mesaj opțional / Optional message / Додаткове повідомлення"></textarea>
+          <button class="btn" type="submit">Trimite</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+  <div class="footer">Mihail & Alina • 12 Iunie 2027 • Costești</div>
+
+  <script>
+    const buttons = document.querySelectorAll('.langbar button');
+    const langBlocks = document.querySelectorAll('.lang');
+    const mini = document.getElementById('miniBrand');
+    const hero = document.querySelector('.hero-inner');
+    const sections = document.querySelectorAll('.section-block');
+    const setLang = (l) => {
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+      langBlocks.forEach(el => el.classList.toggle('active', el.dataset.lang === l));
+      document.documentElement.lang = l;
+    };
+    buttons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+    const io = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')), {threshold:.14});
+    sections.forEach(s => io.observe(s));
+    window.addEventListener('scroll', () => { const y = window.scrollY; mini.classList.toggle('show', y > 120); hero.style.opacity = Math.max(.06, 1 - y/420); hero.style.transform = `translateY(${Math.min(90, y/6)}px)`; });
+  </script>
+</body>
+</html>
