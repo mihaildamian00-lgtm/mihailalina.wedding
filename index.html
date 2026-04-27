@@ -9,6 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://db.onlinewebfonts.com/c/76362bf99a80f18707d7e04c71ab2eb4?family=Modelista+Signature" rel="stylesheet">
   <style>
+    .timeline-item{display:grid;grid-template-columns:80px 32px 1fr;align-items:start;padding-bottom:28px;position:relative}
+.tl-time{font-size:20px;color:var(--muted);padding-top:2px;text-align:right;padding-right:12px}
+.tl-dot{width:14px;height:14px;border-radius:50%;background:var(--reseda);margin-top:6px;position:relative;z-index:1}
+.timeline-item:not([style*="--last"]) .tl-dot::after{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:2px;height:calc(100% + 14px);background:var(--line)}
+.tl-text{font-size:22px;padding-left:12px;padding-top:2px}
     :root{--sage:#c0bfac;--periwinkle:#a6a9b8;--cream:#faf8f3;--reseda:#969d8a;--blush:#edccb4;--ink:#2d2a26;--muted:#6f6a61;--line:rgba(45,42,38,.12)}
     *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream);color:var(--ink);font-family:"Cormorant Garamond",serif;overflow-x:hidden}
     a{color:inherit} button,input,select,textarea{font:inherit}
@@ -97,7 +102,56 @@
         <div class="lang active" data-lang="ro"><h2>Evenimentul</h2><p>Cu binecuvântarea părinților și a nașilor, pornim cu emoție spre această zi specială. Nunta va avea loc la Complexul turistic Costești, în Sala Panoramică, restul detaliilor vor fi comunicate personal.</p></div>
         <div class="lang" data-lang="ua"><h2>Подія</h2><p>З благословенням батьків і хрещених ми зворушено прямуємо до цього особливого дня. Весілля відбудеться в туристичному комплексі Costești, у залі sala Panoramică, а інші деталі ми повідомимо особисто.</p></div>
         <div class="lang" data-lang="en"><h2>The day</h2><p>With the blessing of our parents and godparents, we are stepping with emotion into this special day. The wedding will take place at Complexul turistic Costești, in the panoramic hall, the remaining details will be shared personally.</p></div>
-       </div>
+     <!-- PROGRAM -->
+  <div class="wrap">
+    <div class="card">
+      <div class="eyebrow">Schedule</div>
+      <div class="lang active" data-lang="ro"><h2>Programul zilei</h2></div>
+      <div class="lang" data-lang="ua"><h2>Програма дня</h2></div>
+      <div class="lang" data-lang="en"><h2>Day schedule</h2></div>
+      <div style="margin-top:28px;display:grid;gap:0">
+        <!-- Fiecare rând -->
+        <div class="timeline-item">
+          <div class="tl-time">17:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-text">
+            <div class="lang active" data-lang="ro">Primirea oaspeților</div>
+            <div class="lang" data-lang="ua">Зустріч гостей</div>
+            <div class="lang" data-lang="en">Guest arrival</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">18:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-text">
+            <div class="lang active" data-lang="ro">Ceremonia</div>
+            <div class="lang" data-lang="ua">Церемонія</div>
+            <div class="lang" data-lang="en">Ceremony</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">19:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-text">
+            <div class="lang active" data-lang="ro">Cina & petrecere</div>
+            <div class="lang" data-lang="ua">Вечеря та свято</div>
+            <div class="lang" data-lang="en">Dinner & celebration</div>
+          </div>
+        </div>
+        <div class="timeline-item" style="--last:1">
+          <div class="tl-time">02:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-text">
+            <div class="lang active" data-lang="ro">Final de seară</div>
+            <div class="lang" data-lang="ua">Завершення вечора</div>
+            <div class="lang" data-lang="en">Evening ends</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      </div>
       <div class="card">
         <div class="eyebrow">Location</div>
         <div class="lang active" data-lang="ro"><h2>Acces la locație</h2><p>Complexul turistic Costești oferă cadrul ideal pentru o celebrare elegantă și caldă.</p></div>
@@ -135,8 +189,52 @@
       </div>
     </div>
   </section>
-
   <div class="sep"></div>
+  <!-- COUNTDOWN -->
+<section class="section-block">
+  <div class="wrap">
+    <div class="card" style="text-align:center">
+      <div class="eyebrow">Until the big day</div>
+      <div class="lang active" data-lang="ro"><h2>Până la nuntă</h2></div>
+      <div class="lang" data-lang="ua"><h2>До весілля</h2></div>
+      <div class="lang" data-lang="en"><h2>Days to go</h2></div>
+      <div id="countdown" style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:24px">
+        <div class="detail" style="min-width:100px">
+          <div class="v" id="cd-days">—</div>
+          <div class="k" style="margin-top:6px">
+            <span class="lang active" data-lang="ro">Zile</span>
+            <span class="lang" data-lang="ua">Дні</span>
+            <span class="lang" data-lang="en">Days</span>
+          </div>
+        </div>
+        <div class="detail" style="min-width:100px">
+          <div class="v" id="cd-hours">—</div>
+          <div class="k" style="margin-top:6px">
+            <span class="lang active" data-lang="ro">Ore</span>
+            <span class="lang" data-lang="ua">Год</span>
+            <span class="lang" data-lang="en">Hours</span>
+          </div>
+        </div>
+        <div class="detail" style="min-width:100px">
+          <div class="v" id="cd-min">—</div>
+          <div class="k" style="margin-top:6px">
+            <span class="lang active" data-lang="ro">Minute</span>
+            <span class="lang" data-lang="ua">Хв</span>
+            <span class="lang" data-lang="en">Minutes</span>
+          </div>
+        </div>
+        <div class="detail" style="min-width:100px">
+          <div class="v" id="cd-sec">—</div>
+          <div class="k" style="margin-top:6px">
+            <span class="lang active" data-lang="ro">Secunde</span>
+            <span class="lang" data-lang="ua">Сек</span>
+            <span class="lang" data-lang="en">Seconds</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   <div class="footer">Mihail & Alina • 12 Iunie 2027 • Costești</div>
 
   <script>
@@ -154,6 +252,23 @@
     const io = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')), {threshold:.14});
     sections.forEach(s => io.observe(s));
     window.addEventListener('scroll', () => { const y = window.scrollY; mini.classList.toggle('show', y > 120); hero.style.opacity = Math.max(.06, 1 - y/420); hero.style.transform = `translateY(${Math.min(90, y/6)}px)`; });
+// Countdown
+(function(){
+  const target = new Date('2027-06-12T17:00:00');
+  function tick(){
+    const diff = target - Date.now();
+    if(diff <= 0) return;
+    const d = Math.floor(diff/86400000);
+    const h = Math.floor((diff%86400000)/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    const s = Math.floor((diff%60000)/1000);
+    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-min').textContent   = String(m).padStart(2,'0');
+    document.getElementById('cd-sec').textContent   = String(s).padStart(2,'0');
+  }
+  tick(); setInterval(tick,1000);
+})();
   </script>
 </body>
 </html>
